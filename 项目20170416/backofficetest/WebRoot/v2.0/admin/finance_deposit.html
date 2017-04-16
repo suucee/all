@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>代为入金</title>
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
+<meta name="viewport" content="width=device-width">
+
+<link media="screen" rel="stylesheet" type="text/css" href="../common/css/global.css" />
+<link media="screen" rel="stylesheet" type="text/css" href="../common/css/font-awesome.min.css" />
+<link media="screen" rel="stylesheet" type="text/css" href="../common/css/jquery.datetimepicker.css" />
+
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../common/js/json2.js"></script>
+<script type="text/javascript" src="../common/js/jquery.jsonrpc.js"></script>
+<script type="text/javascript" src="../common/js/layer.js"></script>
+<script type="text/javascript" src="../common/js/jquery.datetimepicker.full.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+
+<script type="text/javascript" src="js/finance_deposit.js"></script>
+<style type="text/css">
+	.search_list li {float:left;  text-align:center; list-style:none; margin-left: 30px; cursor: pointer;overflow: auto;}
+</style>
+</head>
+<body>
+
+
+
+<div class="container">
+
+	<div class="mini-layout-opacilty w980">
+		<a class="btn btn-e"  href="finance_index.html">出金处理</a>
+		<a class="btn btn-d margin-left15" href="finance_deposit.html">代为入金</a>
+		<a class="btn btn-e margin-left15" href="finance_check_record.html">所有出金记录</a>
+		<a class="btn btn-e margin-left15" href="finance_deposit_record.html">所有入金记录</a>
+		<a class="btn btn-e margin-left15" href="finance_summary.html">出入金统计</a>
+	</div>
+			<div class="mini-layout w980" >
+				<legend>
+					<i class="fa fa-money margin-right15" aria-hidden="true"></i>代为入金
+				</legend>
+				
+				<div class="layout padding-left10">
+					<div class="span6 controls controls-row">
+						<div class="control-group">
+							<label class="span3 control-label"> 汇款人：</label>
+							<input type="text" value="" placeholder="手机号、姓名、身份证、邮箱" id="keyword" onkeypress="if(event.keyCode==13){search();}">
+							<button type="submit" id="btn_search" class="btn btn-b">
+									<i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;搜索
+							</button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="layout">
+					<table width="100%" class="table table-striped table-condensed" id="search_table">
+						<thead>
+							<tr>
+								<th style="text-align:left;height:50px" width="50%">
+								搜索结果（鼠标移入查看详细信息）:
+								<ul class="search_list font-green bold"></ul>
+								</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+	
+				
+				<div class="layout padding-left10">
+					<div class="span6 controls controls-row">
+						<div class="control-group">
+							<label class="span3 control-label"> 入金金额</label>
+							<input type="text" maxlength="6" value="" placeholder="0.00" id="amount" onchange="amountchange()" onkeyup="value=value.replace(/[^\d.]/g,'')">USD<br/>
+
+							<label class="span3 control-label"> 流水号：</label>
+							<input type="text" value="" placeholder="汇款单上的流水号" id="payId">
+							<span>没有流水号？<a style="text-decoration: underline;" onclick="autoFill()">点此填写系统默认单号</a></span>
+							<br/>
+							
+<!-- 							<label class="span3 control-label"> 订单号：</label> -->
+<!-- 							<input type="text" value="" placeholder="汇款单上的订单号"><br/> -->
+							
+							<label class="span3 control-label">支付时间</label>
+							<input type="text" value="" placeholder="汇款单上的支付时间" id="payDate">
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="layout padding-left10">
+					<div class="span6 controls controls-row">
+						<div class="control-group">
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="remittance_container  padding-left10">
+					用户备注
+					<input type="text" class="remittance" placeholder="如果用户有特别说明，可填写在此处。（20字以内）" name="userMemo" maxlength=20 style="width:385px;" id="userComment" >
+					<input type="text" style="width:0;height:0; padding: 0;" name="防止浏览器自动填功能"></input>
+				</div>
+				
+				<table width="100%"  class="table table-striped table-condensed">
+						<thead>
+							<tr>
+								<th style="text-align:left;height:50px" width="34%">
+									<span class="red bold"><i class="fa fa-unlock-alt margin-right10" aria-hidden="true"></i>操作密码：</span>
+									<input type="password" value="" placeholder="您的操作密码" name="operationPassword" id="operationPassword" style="width:107px" >
+								</th>
+								<th style="text-align:left;height:50px" width="50%">
+									
+								</th>
+						</thead>
+				</table>
+				<div class="remittance_container padding10">
+					<button type="submit" id="btn_submit" class="btn btn-b">
+						提交 &gt;&gt;
+					</button>
+				</div>
+				
+			</div>
+			
+			<div class="mini-layout w980 sample-screen">
+				<legend><i class="fa fa-bar-chart margin-right15" aria-hidden="true"></i>代为入金记录</legend>
+				<div class="layout as-dates-panel no-overflow padding-left10">
+					<ul>
+						<li>
+							<label for="startDate1"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;日期从</label>
+							<input id="startDate1" name="start1" type="text" style="width:150px" placeholder="-时间不限-" />
+						</li>
+						<li>
+							<label for="endDate1"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;到</label>
+							<input id="endDate1" name="end1" type="text" style="width:150px" placeholder="-时间不限-" value="" />
+						</li>
+						<li><label>&nbsp;&nbsp;</label></li>
+						<li>
+							<label for="state1"><i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;选择状态</label>
+							<select id="state1" name="start" placeholder="" style="width:150px">
+								<option value="" selected="selected">所有状态</option>
+								<option value="PENDING_SUPERVISOR">待财务主管审核</option>
+								<option value="DEPOSITED">已到帐</option>
+								<option value="REJECTED">已拒绝</option>
+							</select>
+						</li>
+						<li>
+							关键字：<input id="keyword1" style="width: 180px;"  name="keyword" type="text" placeholder="用户、邮箱、手机" value="" onkeypress="if(event.keyCode==13){refreshList1(1);}"/>
+						</li>
+						<li>
+							<button id="go" class="btn btn-medium btn-primary" type="submit">
+								检索
+							</button>
+						</li>
+						
+						<li class="clear"></li>
+					</ul>
+					
+				</div>
+		
+			<div class="layout as-dates-panel no-overflow">	
+			    <table width="100%" class="table table-striped orderdetails-table table-condensed">
+			        <thead>
+			            <tr>
+			                <th width="5%">单号</th>
+			                <th width="5%">状态</th>
+			                <th width="10%">用户</th>
+			                <th width="20%">用户付款时间</th>
+			                <th width="15%">入金金额（USD）</th>
+			                <th width="15%">流水号</th>
+			                <th width="15%">审核时间</th>
+			                <th width="15%">操作</th>
+			            </tr>
+			        </thead>
+			        <tbody id="result_list1" class="bold">
+			        </tbody>
+			    </table>
+			</div>
+		</div>
+</div>
+
+
+</body>
+</html>

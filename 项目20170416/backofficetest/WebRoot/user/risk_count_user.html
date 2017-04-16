@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MT4交易记录 - BackOffice</title>
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
+<meta name="viewport" content="width=device-width">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="image/apple-touch-icon-114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="image/apple-touch-icon-144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="image/apple-touch-icon-114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="image/apple-touch-icon-144.png" />
+
+<link media="screen" rel="stylesheet" type="text/css" href="css/global.css" />
+<link media="screen" rel="stylesheet" type="text/css" href="css/fonticon.css" />
+<link type="text/css" href="css/jquery-ui.css" rel="stylesheet" />
+<link media="screen" rel="stylesheet" type="text/css" href="css/jquery-ui-timepicker-addon.css" />
+
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/json2.js"></script>
+<script type="text/javascript" src="js/jquery.jsonrpc.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/risk_count_user.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript" src="js/jquery-ui-timepicker-zh-CN.js"></script>
+</head>
+<body>
+
+<div class="header"></div>
+<div class="sidenav"></div>
+
+<div class="container">
+
+<div class="page-header" >
+    <h1>MT4交易用户统计</h1>
+ </div>
+	<div class="mini-layout w980 as-dates-panel no-overflow"> 
+		<ul style="float: left;">
+			 <li>
+				<label for="keyword"><i class="icon-calendar"></i> 关键字</label>
+				<input style="width:100px;" id="keyword" type="text" placeholder="姓名/邮箱" value="" />
+			</li>
+			<li>
+				<button id="go" class="btn btn-medium btn-primary" type="submit">检索</button>
+			</li>
+			<li class="clear"></li>
+		</ul>
+		<div style="float: right;">
+		<label for="pageSize">页大小：</label>
+		<select id="pageSize">
+				<option value="20">20</option>
+				<option value="50">50</option>
+				<option value="200">200</option>
+				<option value="500">500</option>
+				<option value="1000">1000</option>
+		</select>
+		</div>
+		<div class="clear"></div>
+	</div>
+<div class="mini-layout w980 sample-screen">
+    <table width="100%"  class="table table-striped orderdetails-table table-condensed">
+        <thead>
+            <tr>
+                <th width="10%">用户</th>
+                <th width="15%">用户</th>
+                <th width="10%"  class="amount">入金量</th>
+                <th width="10%" class="amount">出金量</th>
+                <th width="10%" class="amount">网站账户余额</th>
+                <th width="10%" class="amount">Mt4账号</th>
+                <th width="10%" class="amount">Mt4余额</th>
+                 <th width="20%" class="amount">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody id="result_list">
+        </tbody>
+    </table>
+   
+</div>
+
+
+	<div class="footer"></div>
+	<div class="loading"></div><div class="notes"></div>
+</div>
+
+
+</body>
+</html>

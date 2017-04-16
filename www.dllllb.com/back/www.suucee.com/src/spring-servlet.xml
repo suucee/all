@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:cache="http://www.springframework.org/schema/cache" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/context/spring-cache-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd 
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
+
+
+	<!-- 启动Spring的支持注解 -->
+	<context:annotation-config />
+	<aop:aspectj-autoproxy />
+
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults="true">
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<property name="supportedMediaTypes" value = "text/plain;charset=UTF-8" />
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	
+	<!-- 静态资源访问 -->
+	<mvc:resources location="/user/" mapping="/user/**" />
+	
+
+	<!-- 设置当前项目的根包 ，扫描有注解文件的包 -->
+	<context:component-scan base-package="com.maxivetech.backoffice" />
+	<context:component-scan base-package="com.suucee.www" />
+
+	<!-- 完成请求和注解POJO的映射 -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<!-- 添加AJAX支持 -->
+		<property name="messageConverters">
+			<list>
+				<!-- 此处和版本有关，JSON-1.7.2 版本用的是： org.springframework.http.converter.json.MappingJacksonHttpMessageConverter -->
+				<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+					<property name="supportedMediaTypes">
+						<list>
+							<value>text/html;charset=UTF-8</value>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<description>
+			这点是必需的还是非必需的呢？
+			如果定义了 DefaultAnnotationHandlerMapping，它就可以将请求来的 url 和被注解了 @RequesMapping
+			的指进行匹配。
+			当然，说这句话的前提是定义 DefaultAnnotationHandlerMapping 的优先级比定义了其它的 HandlerMapping
+			的优先级要高(如果定义了其它的话)。
+			如果没有定义 DefaultAnnotationHandlerMapping，并不代表不能映射到相应的 handler 上。
+			因为如果你定义了其它的 HandlerMapping，请求过来的 url 和注解了的 @RequestMapping 里的值正好能匹配上，
+			那么没有 DefaultAnnotationHandlerMapping，@Controller 一样可以如鱼得水的被捕获到。
+			当然，如果你要使用基于注解的 @Controller，最好还是老老实实地注册
+			DefaultAnnotationHandlerMapping。
+		</description>
+	</bean>
+	<!-- 对转向页面的路径解析。prefix：前缀， suffix：后缀 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:prefix="/WEB-INF/view/" p:suffix=".jsp" />
+
+
+	<!-- 异常处理类 <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver"> 
+		<property name="defaultErrorView"> <value>error</value> </property> <property 
+		name="exceptionMappings"> <props> <prop key="java.sql.SQLException">/error/error</prop> 
+		<prop key="java.lang.RuntimeException">/error/error</prop> </props> </property> 
+		</bean> -->
+</beans>
+

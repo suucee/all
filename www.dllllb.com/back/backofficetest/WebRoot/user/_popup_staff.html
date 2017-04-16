@@ -1,0 +1,119 @@
+<div class="popup_dialog popup_staff" style="display: none;">
+	<div class="mini-layout w600 sample-screen">
+		<input type="hidden" name="id" value="0" />
+		<table width="100%" class="table table-striped table-condensed">
+			<thead>
+				<tr>
+					<th colspan="2"><h2 class="form_title">设置员工#<span class="id"></span></h2></th>
+					<th style="text-align: right; font-size: 20px; padding: 10px;"><a
+						href="javascript:void();" onclick="javascript:popupStaff.close();"><i class="icon-minus"></i> Close</a></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td width="30%" class="field">姓名:</td>
+					<td colspan="2"><span class="name"></span>
+					</td>
+				</tr>
+				<tr>
+					<td class="field">用户层级:</td>
+					<td colspan="2"><span class="level"></span>
+					</td>
+				</tr>
+				<tr>
+					<td class="field">手机:</td>
+					<td colspan="2" class="blue bold"><span class="mobile"></span>
+					</td>
+				</tr>
+				<tr>
+					<td class="field">Email:</td>
+					<td colspan="2"><span class="email"></span></td>
+				</tr>
+				<tr>
+					<td class="field">职员级别:</td>
+					<td colspan="2">
+					<select name="scheme">
+						<option value="Non">无</option>
+						<option value="Staff">员工</option>
+						<option value="Manager">经理</option>
+					</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="field">操作密码:</td>
+					<td colspan="2"><input type="password" name="operationPassword" /></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="text-align: center; padding: 10px;"><a
+						href="javascript:void(0);"
+						onclick="javascript:popupStaff.submit();"><span
+							class="btn btn-primary"><span><i class="icon-plus icon-white"></i> 確認操作</span></span></a> &nbsp;&nbsp;&nbsp; <a
+						href="javascript:void(0);"
+						onclick="javascript:popupStaff.close();"><span
+							class="btn btn-primary"><span><i class="icon-plus icon-white"></i> 取消操作</span></span></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<script type="text/javascript">
+var popupStaff = {
+	m_userId : 0,
+	m_callbackFunc : null,
+	open : function(userId, callbackFunc) {
+		m_userId = userId;
+		m_callbackFunc = callbackFunc;
+		
+		if (m_userId > 0) {
+			$.jsonRPC.request('adminUserService.getOne', {
+				params : [m_userId],
+				success : function(result) {
+					if (result) {
+						$('.popup_staff .id').html(result.id);
+						$('.popup_staff .name').html(result._name);
+						$('.popup_staff .level').html(result.level);
+						$('.popup_staff .mobile').html(result.mobile);
+						$('.popup_staff .email').html(result.email);
+						
+						switch (result.level) {
+						case 1:
+							$('.popup_staff [name="scheme"]').val('Company');
+							break;
+						case 2:
+							$('.popup_staff [name="scheme"]').val('Manager');
+							break;
+						case 3:
+							$('.popup_staff [name="scheme"]').val('Staff');
+							break;
+						default:
+							$('.popup_staff [name="scheme"]').val('Non');
+						}
+						
+						$('.popup_staff').fadeIn(200);
+					}
+				}
+			});
+		}
+	},
+	close : function() {
+		$('.popup_staff').fadeOut(200);
+	},
+	submit : function() {
+		if (m_userId > 0) {
+			var scheme = $("[name='scheme']").val();
+			var operationPassword = $("[name='operationPassword']").val();
+			
+			$.jsonRPC.request('adminAgentService.setStaff', {
+				params : [m_userId, scheme, operationPassword],
+				success : function(result) {
+					window.alert("设置成功！");
+					popupStaff.close();
+					if (m_callbackFunc != null) {
+						m_callbackFunc();
+					}
+				}
+			});
+		}
+	}
+};
+</script>

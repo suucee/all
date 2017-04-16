@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>入金 - BackOffice</title>
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
+<meta name="viewport" content="width=device-width">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="image/apple-touch-icon-114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="image/apple-touch-icon-144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="image/apple-touch-icon-114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="image/apple-touch-icon-144.png" />
+
+<link media="screen" rel="stylesheet" type="text/css" href="css/global.css" />
+<link media="screen" rel="stylesheet" type="text/css" href="css/fonticon.css" />
+<link media="screen" rel="stylesheet" type="text/css" href="css/deposits.css" />
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/json2.js"></script>
+<script type="text/javascript" src="js/jquery.jsonrpc.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/deposits.js"></script>
+</head>
+<body>
+
+<div class="header"></div>
+<div class="sidenav"></div>
+
+<div class="container">
+
+	<div class="page-header">
+		<h1>入金</h1>
+	</div>
+	
+	<div class="first-run-note">
+		<a href="deposit_list.html"><span class="btn btn-primary"><span><i
+			class="icon-plus icon-white"></i> 查看所有入金记录</span></span></a>
+	</div>
+	
+	<div class="mini-layout w980 no-overflow space-top-bottom">
+		<div class="padding10">
+			<div class="row-fluid">
+				<label for="amount" class="span3 control-label">入金金额（USD）<span class="red">汇率：1 USD = <span class="rate">0.00</span> CNY</span></label>
+				<div class="span6 controls controls-row">
+					<div class="control-group">
+						<input type="text" value="" placeholder="0.00" name="amount" class="span12" id="amount-input">
+					<button type="button" id="btn_continue" class="btn btn-medium btn-primary">继续 &gt;&gt;</button>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="bank_account_container">
+				<p>入金说明:</p>
+	  			1.在线入金结束后，请等待充值成功提示再关闭浏览器，以保障您的资金安全。<br>
+	  			3.如有您有任何疑问，请联系我们的客服人员。
+			</div>
+			<div class="clear"></div>
+		</div>
+		
+	</div>
+	
+
+	<div class="footer"></div>
+	<div class="loading"></div><div class="notes"></div>
+</div>
+
+</body>
+</html>

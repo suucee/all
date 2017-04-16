@@ -1,0 +1,73 @@
+<div class="popup_dialog withdrawal_detail" style="display: none;">
+	<div class="mini-layout w600 sample-screen">
+		<input type="hidden" name="id" value="0" />
+		<table width="100%" class="table table-striped table-condensed">
+			<thead>
+				<tr>
+					<th colspan="3"><h2 class="form_title">出金单详情</h2></th>
+					<th style="text-align: right; font-size: 20px; padding: 10px;"><a
+						href="javascript:void();" onclick="javascript:closeDetailPopup();"><i class="icon-minus"></i> Close</a></th>
+				</tr>
+			</thead>
+			<tbody>
+	        	<tr>
+	        		<td class="field">出金编号:</td>
+	        		<td width="70%" colspan="3">#<span class="id"></span></td>
+	        	</tr>
+	        	<tr>
+	        		<td class="field" width="20%">出金金额:</td>
+	        		<td  class="red" width="20%"><span class="detailAmount"></span></td>
+	        		<td class="field" width="20%">出金金额:</td>
+	        		<td class="red" width="20%"><span class="detailAmountCNY"></span></td>
+	        	</tr>
+	        	<tr>
+	        		<td class="field" width="20%">出金汇率:</td>
+	        		<td class="red" width="20%"><span class="exchangeRate"></span></td>
+	        		<td class="field" width="20%">提交时间:</td>
+	        		<td width="40%"><span class="creatTime"></span></td>
+	        	</tr>
+	        	<tr>
+	        		<td class="field">处理状态:</td>
+	        		<td><span class="state"></span></td>
+	        		<td class="field">处理时间:</td>
+	        		<td><span class="auditedTime"></span></td>
+	        	</tr>
+	        	<tr>
+	        		<td class="field">国家代码:</td>
+	        		<td><span class="countryCode"></span></td>
+	        		<td class="field">银行名称:</td>
+	        		<td><span class="bankName"></span></td>
+	        	</tr>
+	        	<tr>
+	        		<td class="field">收款人姓名:</td>
+	        		<td><span class="accountName"></span></td>
+	        		<td class="field">收款账号:</td>
+	        		<td><span class="accountNo"></span></td>
+	        	</tr>
+	        	<tr class="home">
+					<td class="field" >分行名称:</td>
+					<td><span  class="bankBranch"></span></td>
+					<td class="field" >分行地址:</td>
+					<td><span  class="bankAddress"></span>
+					</td>
+				</tr>
+				<tr class="abroad">
+					<td class="field" >Swift Code:</td>
+					<td><span  class="swiftCode"></span></td>
+					<td class="field" >IBAN:</td>
+					<td><span  class="ibanCode"></span>
+					</td>
+				</tr>
+	        	<tr>
+	        		<td class="field">用户备注:</td>
+	        		<td colspan="3"><span class="userMemo"></span></td>
+	        	</tr>
+	        		        	<tr>
+	        		<td class="field">处理批注:</td>
+	        		<td colspan="3"><span class="auditedMemo"></span></td>
+	        	</tr>
+	        	
+	        </tbody>
+		</table>
+	</div>
+</div>

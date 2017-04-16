@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>用户关系 - BackOffice</title>
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
+		<meta name="viewport" content="width=device-width">
+
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/global.css" />
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/font-awesome.css" />
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/jquery.datetimepicker.css" />
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/jquery.treetable.css" />
+		<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.treetable.js"></script>
+		<script type="text/javascript" src="../common/js/layer.js"></script>
+		<script type="text/javascript" src="../common/js/json2.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.jsonrpc.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.datetimepicker.full.js"></script>
+		<script type="text/javascript" src="../common/js/global.js"></script>
+		<script type="text/javascript" src="js/setting_default_agent.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="mini-layout-opacilty w980">
+				<button class="btn btn-f float-left" onclick="parent.closeWindow()"><i class="fa fa-chevron-left margin-right10"></i>返回</button>
+				<button class="btn btn-f float-right margin-right25" onclick="parent.closeWindow()"><i class="fa fa-remove margin-right10"></i>关闭</button>
+				<div class="clear"></div>
+			</div>
+			<div class="mini-layout w980 ">
+				<legend>
+					<i class="fa fa-users margin-right15" aria-hidden="true"></i>
+					设置默认推荐人（新注册的用户都归属于此推荐人名下，默认推荐码会设置为此推荐人的推荐码）
+				</legend>
+				<div class="layout as-dates-panel no-overflow padding-left10">	
+					<ul>
+						<li>
+							用户关键字：<input id="keyword" name="keyword" type="text" style="width:450px" onkeydown='if(event.keyCode==13){refreshList(1);}'
+							placeholder="姓名、邮箱、电话" value="" />
+						</li>
+						<li>
+							<button id="btn1" class="btn btn-medium btn-primary" type="submit">
+								搜索用户
+							</button>
+						</li>
+						
+						<li class="clear"></li>
+					</ul>
+				</div>
+				<div class="layout">
+					<table width="100%" class="table table-condensed "  id="thetable">
+						<thead>
+							<tr id="result_head" class="my-sticky-element">
+								<th width="20%">客户</th>
+								<th width="8%">级别</th>
+								<th width="8%">状态</th>
+								<th width="13%">手机号</th>
+								<th width="15%">邮箱</th>
+								<th width="10%">注册时间</th>
+								<th width="7%">推荐码</th>
+								<th width="18%" align="center">操作</th>
+							</tr>
+						</thead>
+						<tbody id="result_list">
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

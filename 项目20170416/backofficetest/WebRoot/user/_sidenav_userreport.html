@@ -1,0 +1,26 @@
+<ul class="nav nav-list">
+	<li class="customer"><span>
+		<i class="icon-user"></i>
+		</span>
+		<span class="role"></span><br /><span class="customer_id"></span>
+		</li>
+	<li class="divider cc-number-divider"></li>
+	
+	<li class="index"><a href="userreport.html">报表</a></li>
+	
+	
+	<li class="sidebar-heading"><h3><i class="icon-lock"></i> 报表</h3></li>
+	<li><a href="userreport_deposit.html">入金报表</a></li>
+	<li><a href="userreport_withdrawal.html">出金报表</a></li>
+	<li><a href="userreport_rebate.html">返佣报表</a></li>
+	<li class="divider"></li>
+	
+</ul>
+
+<div style="height:80px;"></div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".sidenav a[href='"+filename+"']").parent().addClass("active");
+});
+</script>

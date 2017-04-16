@@ -1,0 +1,44 @@
+<ul class="nav nav-list">
+	<li class="customer"><span>
+		<i class="icon-user"></i>
+		</span>
+		<span class="role"></span><br /><span class="customer_id"></span>
+		</li>
+	<li class="divider cc-number-divider"></li>
+	
+	<li class="sidebar-heading"><h3><i class="icon-group"></i> 代理管理 </h3></li>
+	<li><a href="agent_list.html">代理列表</a></li>
+	<li><a href="agent_volume.html">代理业绩</a></li>
+	<li class="divider"></li>
+	
+	
+	<li class="sidebar-heading"><h3><i class="icon-group"></i> 代理设置 </h3></li>
+	<li><a href="agent_rebate_settings.html">代理奖励设置</a></li>
+	<li class="divider"></li>
+	
+</ul>
+
+<div style="height:80px;"></div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".sidenav a[href='"+filename+"']").parent().addClass("active");
+});
+
+$(document).ready(function(){
+	getCounts();
+});
+function getCounts() {
+	$.jsonRPC.request("adminMT4Service.getCounts", {
+		params : [],
+		success : function(result) { 
+			if (result) {
+				for (var i in result.list) {
+					var item = result.list[i];
+					$("#count_"+item.scheme).text(item.count);
+				}
+			}
+		}
+	});
+}
+</script>

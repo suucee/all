@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+
+.currency-select {line-height:24px;}
+.currency-select img {float:left;margin-right:5px;}
+.currency-select input {float:left;margin-right:5px;}
+
+td.field {text-align:right !important;font-weight:bold;}
+td.title {text-align:center !important;font-size:24px;padding:15px;}
+h2 {text-align:center;}
+.currency {color:red;}
+
+.bank_account_container {}
+.bank_account {margin-bottom:0;}
+
+.remittance_container {margin:10px 0;}
+.remittance {width:300px;height:60px;line-height:20px;}
+
+.reference-number #customer_id {font-size:20px;color:blue;}

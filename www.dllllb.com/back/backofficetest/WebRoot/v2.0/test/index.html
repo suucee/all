@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>BackOffice 2.0</title>
+			
+			<!--树状图所需css文件-开始-->
+			<link rel="stylesheet" type="text/css" href="../common/ztree/metroStyle/metroStyle.css"/>
+			<link rel="stylesheet" type="text/css" href="../common/css/font-awesome.css"/>
+			<link rel="stylesheet" type="text/css" href="../common/ztree/css/ztree.css"/>
+			<!--树状图所需css文件-结束-->
+			
+		    <link media="screen" rel="stylesheet" type="text/css" href="../common/css/index_global.css" />
+		    
+		    <!--树状图所需js文件-开始-->
+			<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+			<script type="text/javascript" src="../common/js/layer.js"></script>
+			<script type="text/javascript" src="../common/js/json2.js"></script>
+			<!--树状图所需将js文件-结束-->
+			
+		    <script src="../common/ztree/js/jquery.ztree.core.js" type="text/javascript" charset="utf-8"></script>
+		    <script src="../common/ztree/js/jquery.ztree.exedit.js" type="text/javascript" charset="utf-8"></script>
+		    <script src="../common/ztree/js/jquery.ztree.excheck.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript" src="js/test.js"></script>
+		    <script src="../common/ztree/js/jquery-1.4.4.min.js" type="text/javascript" charset="utf-8"></script> 
+		    <script src="../common/ztree/js/ztree.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo"></div>
+			<div class="login_info">
+				<div class="login_email">
+					欢迎你：llf527280013@qq.com
+				</div>
+				<div class="login_date">
+					时&nbsp;&nbsp;间：2016年08月08日&nbsp;&nbsp;星期一
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="container">
+			<div class="user_tree" style="background: rgb(238,242,243);">
+				<div class="my_customer">
+					<i class="fa fa-users" aria-hidden="true"></i>
+					<span>我的客户</span>
+				</div>
+				<div class="divider"></div>
+
+						<div class="zTreeBackground">
+							<div id="search">
+								<div id="search_text_input">
+									<input id="text_search_customer" type="text" size="10" placeholder="姓名、邮箱、电话、标签">
+									<input id="button_search" type="submit" value="搜索" onclick="search()">
+								</div>
+								<ol class="search_result" style="display:none">
+									<li>张三</li>
+									<li>张三</li>
+									<li>李四</li>
+									<li>李四</li>
+									<li>刘洋刘洋刘洋刘洋刘洋刘洋刘洋刘洋刘洋</li>
+									<li>刘洋</li>
+									<li>刘洋</li>
+									<li>刘洋</li>
+									<li>刘洋</li>
+									<li>刘洋</li>
+									<li>刘洋</li>
+				    	<li>刘洋</li>
+				    	<li>刘洋</li>
+				    	<li>刘洋</li>
+				    	<li>刘洋</li>
+				    	<li>刘洋</li>
+				    </ol>
+				</div>
+	        	<ul id="tree" class="ztree"></ul>
+	  		</div> 	
+			
+			</div>
+			<div class="content">
+				<div class="menu">  <ul class="frist-menu">
+　　　<li class="active" data-module="start"> 首页</li>
+　　　<li data-module="info">个人信息</li>
+　　　<li data-module="webaccount">网站账户</li>
+　　　<li data-module="mt4account">MT4账户</li>
+　　　<li data-module="public">公告</li>
+	  <li class="clear"></li>
+	  </ul>
+				<ul class="second-menu">
+					　　　<li class="active" data-module="start" data-column="index" style="">概要</li>
+					　　　<li data-module="info" data-column="index" style="display:none;">个人信息</li>
+					　　　<li data-module="info" data-column="edit" style="display:none;">修改信息</li>
+					　　　<li data-module="info" data-column="bankaccount" style="display:none;">银行卡管理</li>
+					　　　<li data-module="info" data-column="changepassword" style="display:none;">修登录改密码</li>
+					　　　<li data-module="info" data-column="changepaymentpassword" style="display:none;">修登支付密码</li>
+					　　　<li data-module="webaccount" data-column="index" style="display:none;">概要</li>
+					　　　<li data-module="webaccount" data-column="statement" style="display:none;">账户流水</li>
+					　　　<li data-module="webaccount" data-column="deposit" style="display:none;">出金</li>
+					　　　<li data-module="webaccount" data-column="withdrawal" style="display:none;">入金</li>
+					　　　<li data-module="webaccount" data-column="transfer" style="display:none;">转账</li>
+					　　　<li data-module="mt4account" data-column="index" style="display:none;">概要</li>
+					　　　<li data-module="mt4account" data-column="history" style="display:none;">历史交易记录</li>
+					　　　<li data-module="public" data-column="index" style="display:none;">最新公告</li>
+					<li style="display: none;" class="clear"></li>
+				</ul>
+			</div>
+			<iframe src="start_index.html" id="show_content" name="show_content">
+					
+				</iframe>
+				
+			</div>
+				<iframe id="show_content" name="show_content" >
+					
+				</iframe>
+				
+			</div>
+			<div class="clear"></div>
+		</div>
+	</body>
+</html>

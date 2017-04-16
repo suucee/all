@@ -1,0 +1,37 @@
+.processor{
+	height: 30px;
+	width: 100%;
+}
+
+.processor > div{
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+.processor > div > span{
+	height: 30px;
+}
+
+
+.processor_1,.processor_2,.processor_3{
+	width: 33.33%;
+	background: gainsboro;
+}
+.processor_1{
+	background: rgba(23,154,23,0.9);
+}
+
+
+.operation_1,.operation_2,.operation_3{
+	height: 250px;
+	width: 50%;
+	margin:30px auto;
+}
+
+.email_address_span, .email_input, .email_code{
+	text-align: center;
+}
+.submit_div{
+	text-align: center;
+	margin-top: 40px;
+}

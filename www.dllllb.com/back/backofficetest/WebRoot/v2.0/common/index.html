@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>BackOffice 2.0</title>
+
+		<!--树状图所需css文件-开始-->
+		<link rel="stylesheet" type="text/css" href="../common/ztree/metroStyle/metroStyle.css"/>
+		<link rel="stylesheet" type="text/css" href="../common/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="../common/ztree/css/ztree.css"/>
+		<link rel="stylesheet" type="text/css" href="../common/welcome/css/welcome.css"/>
+		<!--树状图所需css文件-结束-->
+
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/index_global.css" />
+
+		<!--树状图所需js文件-开始-->
+		<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../common/js/layer.js"></script>
+		<script type="text/javascript" src="../common/js/json2.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.jsonrpc.js"></script>
+		<script src="../common/js/tabulous.js" type="text/javascript" charset="utf-8"></script>
+		<!--树状图所需将js文件-结束-->
+
+		<script src="../common/ztree/js/jquery.ztree.core.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/ztree/js/jquery.ztree.exedit.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/ztree/js/jquery.ztree.excheck.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/ztree/js/jquery.ztree.exhide.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- 		    <script src="../common/ztree/js/jquery-1.4.4.min.js" type="text/javascript" charset="utf-8"></script> -->
+		<script src="../common/ztree/js/ztree.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../common/js/index_global.js"></script>
+		<link rel="icon" type="image/x-icon" href="http://www.fxideal.com/static/img/minlogo.ico" />
+	</head>
+	<body style="overflow: hidden;">
+		<div class="container">
+			<div class="header">
+				<div class="tree_top">
+					<div class="logo"></div>
+				</div>
+				<div class="menu">
+
+				</div>
+				<div class="login">
+					<div class="user-icon">
+					     <i class="fa fa-user" aria-hidden="true"></i>
+				    </div>
+				    <div class="show-item login-name">
+				    </div>
+				    <div class="show-item login-id">
+				    </div>	
+<!-- 				    <div class="show-item"> -->
+<!-- 				    	| -->
+<!-- 				    </div>	 -->
+				    <div class="show-item admin-changepwd" style="cursor: pointer; display:none;">
+				    	| 更改密码
+				    </div>	
+				    
+				    <div class="show-item">
+				    	|
+				    </div>	
+				     <div class="show-item login-logout">
+				    	退出
+				    </div>		
+				</div>
+			</div>
+			<div class="section">
+				<div class="user_tree">
+					
+				</div>
+				<div class="content">
+					<div class="frame">
+						<iframe id="show_content" name="show_content" >
+	
+						</iframe>
+						<iframe id="show_detail" name="show_detail" style="display:none;" >
+	
+						</iframe>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</body>
+</html>

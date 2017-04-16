@@ -1,0 +1,55 @@
+				<div class="sideTool">
+						<i class="fa fa-arrows-h" aria-hidden="true" title="拓宽客户关系树"></i>
+					</div>
+					<div class="my_customer" style="display: none">
+						<div class="my_customer_div" title="选择显示我的客户">
+							<!--<i class="fa fa-users my_customer_i" aria-hidden="true" ></i>-->
+							<input type="radio" name="radio" id="my_customer_radio" value="my_customer" checked="checked" onclick="showMyCustomers()"/>
+							<span>我的客户</span>
+						</div>
+						<div class="cp_customer_div"  title="选择显示公司分配的客户">
+							<!--<i class="fa fa-users cp_customer_i" aria-hidden="true"></i>-->
+							<input type="radio" name="radio" id="cp_customer_radio" value="cp_customer" onclick="showCpCustomers()"/>
+							<span>分配客户</span>
+
+						</div>
+						<div class="my_customer_refresh">
+							<i class="fa fa-refresh" aria-hidden="true" title="刷新" onclick="refreshTreeData()"></i>
+						</div>
+					</div>
+					
+
+					<div class="zTreeBackground">
+						<div id="search_text_input">
+							<input id="text_search_customer" type="text" size="10" placeholder="姓名、邮箱、电话、标签">
+							<div class="searchIcon">
+								<i class="fa fa-search" aria-hidden="true" onclick="search()"></i>
+							</div>
+							
+							<div class="type align-center" style="display: none">
+								<font>客户分类：</font>
+								<span class="staff" onclick="getStaffList()">员工</span>
+								<span class="agent" onclick="getAgentList()">代理</span>
+							</div>
+							<!--<input id="button_search" type="submit" value="搜索" onclick="search()">-->
+						</div>
+						<div class="search_contain">
+							<div id="search">
+								<div class="search_result_div">
+									<div class="clear_search_result" style="display: none;">
+										<span>搜索结果</span>
+										<i class="fa fa-trash" aria-hidden="true" title="清除搜索结果" onclick="clear_search_result()"></i>
+										<div class="divider"></div>
+									</div>
+									<ol class="search_result" style="display:block"></ol>
+								</div>
+								<div class="divider"></div>
+							</div>
+							<div class="my_customers_tree">
+								<div class="my_customer_showTip" title="当前显示的客户">
+									<i class="fa fa-users my_customer_i" aria-hidden="true" ></i><span id="my_customer_showTip">我的客户</span>
+								</div>
+								<ul id="tree" class="ztree"></ul>
+							</div>
+						</div>
+					</div>

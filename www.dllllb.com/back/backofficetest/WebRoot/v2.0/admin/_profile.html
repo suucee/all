@@ -1,0 +1,126 @@
+	<table width="98%" class="table-info table table-condensed">
+		<tbody>
+			<tr>
+				<td class="align-left" style="width: 70px">当前状态:</td>
+				<td>
+				<span class="select-medium disable_frozen" style="width:60px"></span>
+				<span class="select-medium state">已审核</span>
+				</td>
+				<td align="right" class="align-left  agent_td" width="75px">推荐码:</td>
+				<td class="agent_td" width="35%"><span class="referralCode"></span></td>
+
+			</tr>
+
+			<tr>
+				<td class="align-left" style="width: 60px">级别:</td>
+				<td>
+					<span class="agent_level">用户</span>
+				</td>	
+				<td align="right" class="align-left" width="70px">负责人:</td>
+				<td class="" width="35%"><span class="stuffName"></span></td>
+			</tr>
+
+			<tr class="agent_tr">
+				<td class="align-left">推荐人:</td>
+				<td colspan="3"><select name="upId" class="agent" style="width: 100%">
+				</select></td>
+			</tr>
+
+
+			<tr>
+				<td class="align-left"><span style="color:red;">*</span>电子邮箱:</td>
+<!-- 				<td><input class="email input-medium" type="text"> -->
+<!-- 				<a class="email_opear margin-left10" href="#" style="text-decoration: underline;"></a> -->
+<!-- 				</td> -->
+				<td >
+					<span class="email"></span>
+					<a class="email_opear margin-left10" href="#" style="text-decoration: underline;"></a>
+				</td>
+
+				<td class="align-left" ><span style="color:red;">*</span>注册电话:</td>
+				<td class="">
+<!-- 				<select id="select_mobileCode" class="select_mobileCode select-small"> -->
+<!-- 					此处的option应该动态load admin下的_options_countryCode.html -->
+<!-- 				</select>  -->
+<!-- 				<input class="tel right-field select-small-input" type="text"> -->
+
+					<span class="tel"></span>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="align-left"><span style="color:red;">*</span>姓 名:</td>
+				<td><input class="name input-medium" type="text" > <!-- 										<select class="select-small"> --> <!-- 											<option value="man">男</option> -->
+					<!-- 											<option value="wuman">女</option> --> <!-- 										</select> --></td>
+
+				<td class="align-left"><span style="color:red;">*</span>拼音/英文</td>
+				<td class="enameValueTd"><input class="ename field-right input-medium" type="text"></td>
+			</tr>
+
+			<tr>
+				<td class="align-left"><span style="color:red;">*</span>身份证明:</td>
+				<td colspan="3"><select id="cardType" class="select-medium align-right">
+						<option value="">-证件类型-</option>
+						<option value="身份证">身份证</option>
+						<option value="驾驶证">驾驶证</option>
+						<option value="护照">护照</option>
+				</select> <input id="cardID" class="select-medium-input" type="text" ></td>
+			</tr>
+
+			<tr>
+				<td class="align-left"><span style="color:red;">*</span>居住地:</td>
+				<td colspan="3" class="addressTd">
+				<select class="select-medium userNationality select_userNationality">
+				<!-- 					此处的option应该动态load admin下的_options_country.html -->
+				</select> <input class="address " type="text">
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class="align-left">所在公司:</td>
+				<td><input class="cname input-medium" type="text" ></td>
+				<td class="align-left">所属行业:</td>
+				<td><input class="hangye field-right input-medium" type="text" ></td>
+			</tr>
+
+			<tr>
+				<td class="align-left">现任职位:</td>
+				<td><input class="userPosition input-medium" type="text"></td>
+				<td class="align-left">年收入:</td>
+				<td><input class="yearsr field-right input-medium" type="text"></td>
+			</tr>
+
+			<tr>
+				<td colspan="4">
+					<div class="layout imageShow" style="max-height: 160px; text-align: left; background-color: #e0e2e3; overflow-x: auto;" class="imageShow"></div>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td colspan="4">
+				<a class="btn  btn-file"  style="margin-left:40px;">
+			       <input id="img_upload"   name="img_upload" type="file" onchange="ajaxUserProfileUpload()" >
+			       <i class="fa fa-upload margin-right15" aria-hidden="true"></i>上传有效证件照片
+		    	</a>
+				</td>
+			</tr>
+
+			<tr class="userImg">
+				<td colspan="4"><span class="bold" style="color: red;">说明：<br /></span> 
+				1、有效的身份证正反面和地址证明
+				<span style="margin-left:5px;" class=" font-green cursor-p" title="什么是地址证明?"> <i
+						class="fa fa-question-circle-o" onclick="showWhatisAddrProf(this)"></i>
+				</span><br /> 
+				2、上传图片格式为(.jpg|.jpeg|.png|.gif)。<br />
+				3、单张图片大小不能超过10M。</td>
+			</tr>
+			
+			<tr>
+				<td class="profile_sbt" style=" text-align: center;" colspan="4"></td>
+			</tr>
+			
+		</tbody>
+	</table>
+

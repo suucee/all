@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>待发放的返佣 - BackOffice</title>
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
+		<meta name="viewport" content="width=device-width">
+
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/global.css" />
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/font-awesome.css" />
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/jquery.datetimepicker.css" />
+        <link media="screen" rel="stylesheet" type="text/css" href="../common/css/jquery.treetable.css" />
+		<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="../common/js/jquery.treetable.js"></script>
+		<script type="text/javascript" src="../common/js/json2.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.jsonrpc.js"></script>
+		<script type="text/javascript" src="../common/js/layer.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.datetimepicker.full.js"></script>
+		<script type="text/javascript" src="../common/js/ajaxfileupload.js"></script>
+		<script type="text/javascript" src="../common/js/global.js"></script>
+
+		<script type="text/javascript" src="js/rebate_user_balance.js"></script>
+		<style>
+			input{
+				width: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="mini-layout-opacilty w980">
+				<a class="btn btn-e"  href="rebate_index.html">返佣分类</a>
+				<a class="btn btn-e margin-left15" href="rebate_waiting_order.html">待返佣订单</a>
+				<a class="btn btn-e margin-left15" href="rebate_report_user.html">用户返佣收入</a>
+				<a class="btn btn-e margin-left15" href="rebate_report_source.html">返佣来源用户</a>
+				<a class="btn btn-e margin-left15" href="rebate_report_login.html">返佣来源MT4</a>
+	            <a class="btn btn-e margin-left15" href="rebate_rebated_order.html">返佣明细</a>
+				<a class="btn btn-d margin-left15" href="rebate_user_balance.html">返佣发放</a>
+			</div>
+			<div class="mini-layout w980">
+				<legend>
+					<i class="fa fa-list margin-right15" aria-hidden="true"></i>返佣发放
+				</legend>
+				<div class="layout  as-dates-panel no-overflow padding10">
+							<button id="btn_send" class="btn btn-medium btn-primary" type="submit">
+								发放佣金给已勾选的用户
+							</button>
+				</div>
+
+				<div class="layout">
+					<table width="100%"  class="table  orderdetails-table table-condensed"  id="thetable">
+						<thead>
+							<tr >
+								<th width="10%">
+								<input type="checkbox" id="check_all" />
+								全选</th>
+								<th width="10%">用户</th>
+								<th width="10%">级别</th>
+								<th width="20%">邮箱地址</th>
+								<th width="10%">手机</th>
+								<th width="12%" class="amount">所获佣金</th>
+								<th width="12%" class="amount">账户可用余额</th>
+								<th width="16%" class="amount">发放佣金后的账户余额</th>
+							</tr>
+						</thead>
+						<tbody id="result_list">
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+</html>

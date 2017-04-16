@@ -1,0 +1,16 @@
+com/yasinshaw/controller/TestController.class
+com/yasinshaw/service/impl/BaseServiceImpl.class
+com/yasinshaw/controller/JsonRpcView.class
+com/yasinshaw/util/Demo.class
+com/yasinshaw/dao/impl/BaseDaoImpl.class
+com/yasinshaw/dao/BaseDao.class
+com/yasinshaw/dao/impl/StudentDaoImpl.class
+com/yasinshaw/entity/Student.class
+com/yasinshaw/dao/StudentDao.class
+com/yasinshaw/filter/SimpleCORSFilter.class
+com/yasinshaw/util/DB.class
+com/yasinshaw/service/BaseService.class
+com/yasinshaw/controller/JsonRpcController.class
+com/yasinshaw/service/impl/StudentServiceImpl.class
+com/yasinshaw/service/StudentService.class
+com/yasinshaw/controller/TestService.class

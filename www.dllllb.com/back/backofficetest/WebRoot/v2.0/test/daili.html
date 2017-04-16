@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link media="screen" rel="stylesheet" type="text/css" href="../common/css/global.css">
+    <link media="screen" rel="stylesheet" type="text/css" href="../test/css/daili.css">
+    <link media="screen" rel="stylesheet" type="text/css" href="../common/css/font-awesome.css" />
+    <script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../common/js/layer.js"></script>
+    <script type="text/javascript" src="../common/js/json2.js"></script>
+</head>
+<body>
+<div class="content">
+    <h1 class="bold">我的客户</h1>
+    <div class="base-info">
+        <h3>基本信息</h3>
+        <ul>
+            <li class="fl li-na">
+                <p>姓名</p>
+                <p>兵工厂</p>
+            </li>
+            <li class="fl li-nb">
+                <p>账户名</p>
+                <p>llf527280013@qq.com</p>
+            </li>
+            <li class="fl li-nb">
+                <p>联系电话</p>
+                <p>123455678994</p>
+            </li>
+            <li class="fl li-na">
+                <p>账户状态</p>
+                <p><img src="../user/images/a.png">通过审核</p>
+            </li>
+            <li class="clear"></li>
+        </ul>
+        <p class="p-set">标签：<span><a href="###">未设置</a></span>（设置标签便于自己记录、管理、查询）</p>
+        <p class="p-set"><a class="fr" href="###">查看更多信息>></a></p>
+        <p class="clear"></p>
+    </div>
+    <div class="mini-layout w980 as-dates-panel filter_container no-overflow">
+        <h3>报表统计</h3>
+        <ul>
+            <li style="width: 12%">
+                <button class="btn btn-primary btn-lable">入金统计</button>
+            </li>
+            <li style="width: 12%">
+                <button class="btn btn-primary btn-lable">出金统计</button>
+            </li>
+            <li style="width: 12%">
+                <button class="btn btn-primary btn-lable">返佣统计</button>
+            </li>
+            <li style="width: 50%">
+                <button class="btn btn-primary btn-lable btn-records">MT4交易记录</button>
+            </li>
+            <li class="clear"></li>
+        </ul>
+        <ul>
+            <li>
+                <label><i class="icon-calendar"></i> 选择年月：</label>
+                <input name="keyword" id="keyword" onkeypress="if(event.keyCode==13) {$('#btn_search').click();return false;}" type="date">
+            </li>
+            <li>
+                <button id="btn_search" class="btn btn-medium btn-primary" type="submit">搜索</button>
+            </li>
+            <li class="clear"></li>
+        </ul>
+    </div>
+
+    <div class="mini-layout w980 sample-screen">
+        <table class="table table-condensed table-striped" width="100%">
+            <thead id="result_header">
+            <tr class="my-sticky-element">
+                <th width="20%">MT4账号</th>
+                <th width="20%">时间</th>
+                <th width="10%">类型</th>
+                <th width="20%">交易品种/备注</th>
+                <th width="10%">交易量</th>
+                <th width="20%">获利（USD）</th>
+            </tr>
+            </thead>
+            <tbody id="result_list">
+            <tr>
+                <td>ABC!@#DFG</td>
+                <td>2016-8-8 13:54</td>
+                <td>BUY</td>
+                <td>XAUUSD.stp</td>
+                <td>8</td>
+                <td class="num">-345</td>
+            </tr>
+            <tr>
+                <td>ABC!@#DFG</td>
+                <td>2016-8-8 13:54</td>
+                <td>BUY</td>
+                <td>XAUUSD.stp</td>
+                <td>8</td>
+                <td class="num">-345</td>
+            </tr>
+            <tr>
+                <td>ABC!@#DFG</td>
+                <td>2016-8-8 13:54</td>
+                <td>BUY</td>
+                <td>XAUUSD.stp</td>
+                <td>8</td>
+                <td class="num">-345</td>
+            </tr>
+            <tr>
+                <td>ABC!@#DFG</td>
+                <td>2016-8-8 13:54</td>
+                <td>BUY</td>
+                <td>XAUUSD.stp</td>
+                <td>8</td>
+                <td class="num">-345</td>
+            </tr>
+            <tr>
+                <td>累计获利总额（USD）：<span class="num">210,69</span></td>
+            </tr>
+         </tbody>
+         </table>
+    </div>
+</div>
+
+</body>
+</html>

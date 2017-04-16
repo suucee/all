@@ -1,0 +1,168 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body {
+    overflow-y: scroll;
+    color: #333333;
+    font-family: "Calibri", "calibriregular", sans-serif;
+    background-color: #eef2f3;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+dl, dt, dd, p {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+
+a {
+    color: #802b20;
+    text-decoration: none;
+}
+a .icon-remove {
+    color: #b94a48;
+}
+.bold {
+    font-weight: bold;
+}
+.clear {
+    float: none !important;
+    clear: both;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: 0 !important;
+    width: 0 !important;
+}
+.fl {
+    float: left !important;
+}
+.fr {
+    float: right !important;
+}
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+.blue {
+    color: blue;
+}
+.black {
+    color: black;
+}
+.gray {
+    color: gray;
+}
+.white {
+    color: white;
+}
+.purple {
+    color: purple;
+}
+
+.content{
+    width: 90%;
+    min-width: 980px;
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 20px;
+    color: inherit;
+    text-rendering: optimizelegibility;
+}
+h1 {
+    width: 100%;
+    margin: 30px auto 20px auto;
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: bolder;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #333333;
+}
+
+.base-info{
+    background: white;
+    border: 1px solid #d2d2d2;
+    padding-bottom: 10px;
+}
+
+h3{
+    font-size: 16px;
+    color: white;
+    background-color: #0d526e;
+    border-bottom: 1px solid #d2d2d2;
+    padding: 5px 0 5px 5px;
+    margin: 0;
+}
+
+ul{
+    padding: 10px 0;
+}
+li{
+    padding-left: 5px;
+}
+.li-na{
+    width: 19%;
+}
+.li-nb{
+    width: 29%;
+}
+.p-set{
+    padding: 5px;
+    line-height: 20px;
+}
+.p-set a{
+    color: #72c39f;
+}
+
+.table tr{
+    border-bottom: 1px solid #d2d2d2;
+    border-collapse: collapse;
+}
+.mini-layout{
+    margin: 0;
+    border-collapse: collapse;
+}
+.w980{
+    width: 100%;
+}
+.num{
+    color: #fb0404;
+}
+.mini-layout ul{
+    border-bottom: 1px solid #d2d2d2;
+    border-collapse: collapse;
+}
+.as-dates-panel{
+    margin-top: 20px;
+    border-bottom: none;
+}
+.btn-lable{
+    color: #333333;
+    background: #eeeeee;
+    border: none;
+    border: 1px solid #d2d2d2;
+}
+.btn-records{
+    color: #ffffff;
+    background-color: #dc6047;
+    border: none;
+}

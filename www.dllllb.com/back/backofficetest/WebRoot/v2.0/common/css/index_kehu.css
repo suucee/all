@@ -1,0 +1,181 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body {
+    overflow-y: scroll;
+    color: #333333;
+    font-family: "Calibri", "calibriregular", sans-serif;
+    background-color: #eef2f3;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+dl, dt, dd, p {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+
+a {
+    color: #802b20;
+    text-decoration: none;
+}
+a .icon-remove {
+    color: #b94a48;
+}
+.bold {
+    font-weight: bold;
+}
+.clear {
+    float: none !important;
+    clear: both;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: 0 !important;
+    width: 0 !important;
+}
+.fl {
+    float: left !important;
+}
+.fr {
+    float: right !important;
+}
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+.blue {
+    color: blue;
+}
+.black {
+    color: black;
+}
+.gray {
+    color: gray;
+}
+.white {
+    color: white;
+}
+.purple {
+    color: purple;
+}
+
+.content{
+    width: 90%;
+    min-width: 980px;
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 20px;
+    color: inherit;
+    text-rendering: optimizelegibility;
+}
+h1 {
+    width: 100%;
+    margin: 30px auto 20px auto;
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: bolder;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #333333;
+}
+.base-info{
+    background: white;
+    border: 1px solid #d2d2d2;
+}
+
+h3{
+    font-size: 16px;
+    color: white;
+    background-color: #0d526e;
+    border-bottom: 1px solid #d2d2d2;
+    padding: 5px 0 5px 5px;
+    margin: 0;
+}
+
+ul{
+    padding: 10px 0;
+}
+li{
+    padding-left: 5px;
+}
+.li-na{
+    width: 10%;
+}
+.li-nb{
+    width: 25%;
+}
+.li-nc{
+    width: 17%;
+}
+.p-sh{
+    background-image: url("");
+}
+
+.money{
+    margin: 18px 0;
+    background: #f7f7f7;
+    border: 1px solid #d2d2d2;
+}
+.money > h3{
+    background: none;
+    border: none;
+    color: #333333;
+}
+.money ul{
+    padding-left: 5px;
+}
+
+.money li{
+    padding-left: 0;
+    width: 27%;
+    background: white;
+    border: 1px solid #d2d2d2;
+}
+.money .li1{
+    margin-left: 8%;
+}
+.money p{
+    padding-left: 20px;
+    line-height: 24px;
+}
+.money span{
+    font-size: 24px;
+}
+.money .span1{
+    color: #72c39f;
+}
+.money .span2{
+    color: #70b1d6;
+}
+.money .span3{
+    color: #dc6047;
+}
+
+.table{
+    border: 1px solid #d2d2d2;
+}
+
+.mini-layout > h3 >a{
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+}

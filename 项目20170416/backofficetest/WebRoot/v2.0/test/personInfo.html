@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BackOffice 2.0</title>
+
+    <!--树状图所需css文件-开始-->
+    <link rel="stylesheet" type="text/css" href="../common/ztree/metroStyle/metroStyle.css"/>
+    <link rel="stylesheet" type="text/css" href="../common/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="../common/ztree/css/ztree.css"/>
+    <!--树状图所需css文件-结束-->
+
+    <!--基础库css文件-结束-->
+    <link media="screen" rel="stylesheet" type="text/css" href="../common/css/global.css" />
+    <!--基础库css文件-结束-->
+    
+   <!--个人信息页面所需css文件-开始-->
+    <link media="screen" rel="stylesheet" type="text/css" href="./css/personInfo.css"/>
+    <!--个人信息页面所需css文件-结束-->
+
+    <!--树状图所需js文件-开始-->
+    <script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../common/js/layer.js"></script>
+    <script type="text/javascript" src="../common/js/json2.js"></script>
+    <!--树状图所需将js文件-结束-->
+
+    <script src="../common/ztree/js/jquery.ztree.core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../common/ztree/js/jquery.ztree.exedit.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../common/ztree/js/jquery.ztree.excheck.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="js/test.js"></script>
+    <script src="../common/ztree/js/jquery-1.4.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../common/ztree/js/ztree.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <form method="" action="post">
+        <div class="clayout">
+            <h1 class="cw770 cc333">我的资料</h1>
+            <div class="cw770 basic-info cbd">
+                <div class="ctitle">基本信息（必填）</div>
+                <div class="ccontent">
+                    <table>
+                        <tr>
+                            <td cols="2" class="status">当前状态：<em class="ccfff cbg-green cbr2">账户已通过审核</em><span class="caaa">(资料不可更改）</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                电子邮箱：<em>IIf527280014@QQ.com</em>
+                            </td>
+                            <td>
+                                电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：<em>18223454345</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i>*</i>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text">
+                            </td>
+                            <td>
+                                <i>*</i>姓名拼音：<input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <i>*</i>身份证明：<select name="">
+                                <option value="">证件类型</option>
+                            </select>
+                                <input type="text" placeholder="身份证号">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <i>*</i>居&nbsp;住&nbsp;地&nbsp;：<select name="">
+                                <option value="">国家</option>
+                            </select>
+                                <input type="text" placeholder="具体地址">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="cw770 idcard-info cbd">
+                <div class="ctitle">上传您的身份证明（必填）</div>
+                <div class="ccontent">
+                    <p class="cc333">
+                        您还没有上传您的身份证明！
+                        <button class="load-btn btn cfff"><i></i>立即上传</button>
+                    </p>
+                    <ul class="clearfix">
+                        <li><img src="./image/load_bg.png" alt=""></li>
+                        <li><img src="./image/load_bg.png" alt=""></li>
+                        <li><img src="./image/load_bg.png" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p class="sub-info cw770"><button class="btn ccfff submit">提交资料</button></p>
+    </form>
+    <div class="note-info cw770">
+        <p>说明：</p>
+        <ul>
+            <li> 1、在审核过程中您仍可修改或追加您的信息和图片文件资料。</li>
+            <li> 2、账户激活后，不可再修改资料。</li>
+        </ul>
+    </div>
+</body>
+</html>

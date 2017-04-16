@@ -1,0 +1,65 @@
+<div class="popup_dialog" style="display: none;">
+	<div class="mini-layout w600 sample-screen">
+		<input type="hidden" name="id" value="0" />
+		<table width="100%" class="table table-striped table-condensed">
+			<thead>
+				<tr>
+					<th colspan="3"><h2 class="form_title">入金单详情</h2></th>
+					<th style="text-align: right; font-size: 20px; padding: 10px;"><a
+						href="javascript:void();" onclick="javascript:closePopup();"><i class="icon-minus"></i> Close</a></th>
+				</tr>
+			</thead>
+			<tbody>
+	        	<tr>
+	        		<td class="field">入金编号:</td>
+	        		<td width="70%" colspan="3">#<span class="id"></span></td>
+	        	</tr>
+	        	<tr>
+	        		<td class="field" width="20%">流水号:</td>
+	        		<td class="red" width="20%"><span class="orderNum"></span></td>
+	        		<td class="field" width="20%">入金金额:</td>
+	        		<td class="red" width="20%"><span class="popamount"></span></td>
+	        	</tr>
+	        	<tr>
+	        		<td class="field">处理状态:</td>
+	        		<td><span class="state"></span></td>
+	        		<td class="field">处理时间:</td>
+	        		<td><span class="auditedTime"></span></td>
+	        	</tr>
+	        	<tr>
+	        		<td class="field">提交时间:</td>
+	        		<td ><span class="creatTime"></span></td>
+	        		<td class="field">支付时间:</td>
+	        		<td ><span class="payTime"></span></td>
+	        	</tr>
+	        	<tr>
+	        		<td class="field">用户备注：</td>
+	        		<td colspan="3"><span class="userComment"></span></td>
+	        	</tr>
+	        	<tr>
+	        		<td class="field">操作:</td>
+	        		<td colspan="3">
+	        			<select name="newState" id="newState"></select>
+					</td>
+	        	</tr>
+	        	<tr>
+	        		<td class="field">处理批注:</td>
+	        		<td colspan="3"><textarea style="width:80%;line-height:20px;height:60px;" class="auditedMemo"></textarea></td>
+	        	</tr>
+	        	<tr>
+					<td class="field">操作密码:</td>
+					<td colspan="3"><input type="password" name="operationPassword" id="operationPassword"/></td>
+				</tr>
+				<tr>
+					<td colspan="4" style="text-align: center; padding: 10px;"><a
+						href="javascript:void(0);"
+						onclick="javascript:doPopup();"><span
+							class="btn btn-primary"><span><i class="icon-plus icon-white"></i> 确认操作</span></span></a> &nbsp;&nbsp;&nbsp; <a
+						href="javascript:void(0);"
+						onclick="javascript:closePopup();"><span
+							class="btn btn-primary"><span><i class="icon-plus icon-white"></i> 取消操作</span></span></a></td>
+				</tr>
+	        </tbody>
+		</table>
+	</div>
+</div>

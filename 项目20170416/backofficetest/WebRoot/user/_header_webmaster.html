@@ -1,0 +1,26 @@
+<dl>
+	<dd class="logo">
+		<a href="../"></a>
+	</dd>
+	<dd>
+		<a href="start_admin.html" class="nav_start">开始</a>
+    </dd>
+	<dd>
+		<a href="column_tree.html" class="nav_website">网站</a>
+    </dd>
+	
+	<dd class="logout fr">
+		<a href="javascript:void();" onclick="javascript:logout();"><i class="icon-signout"></i>登出</a>
+	</dd>
+</dl>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".header dt").click(function(){
+		if ($(this).find("ul:visible").length > 0) {
+			$(this).find("ul").slideUp(200);
+		} else {
+			$(this).find("ul").slideDown(200);
+		}
+	});
+});
+</script>

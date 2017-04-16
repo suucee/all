@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+.field {font-weight:bold;text-align:right !important;padding-right:20px;}
+legend {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    color: #396172;
+    margin:10px;
+    display: block;
+    font-size: 21px;
+}
+
+.tab_content {border:1px solid silver;margin-top:-2px;z-index:-10;}
+
+#tab_list {height:40px;}
+#tab_list li {border:1px solid silver;float:left;height:30px;line-height:30px;font-size:18px;padding:5px 15px;background:#ddd;}
+#tab_list li.current {background:white;border-bottom:none;}

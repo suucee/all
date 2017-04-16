@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>用户银行卡审核- BackOffice</title>
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
+<meta name="viewport" content="width=device-width">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="image/apple-touch-icon-114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="image/apple-touch-icon-144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="image/apple-touch-icon-114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="image/apple-touch-icon-144.png" />
+
+<link media="screen" rel="stylesheet" type="text/css" href="css/global.css" />
+<link media="screen" rel="stylesheet" type="text/css" href="css/global.css" />
+<link media="screen" rel="stylesheet" type="text/css" href="css/fonticon.css" />
+<link media="screen" rel="stylesheet" type="text/css" href="css/user_list.css" />
+<link type="text/css" href="css/jquery-ui.css" rel="stylesheet" />
+<link media="screen" rel="stylesheet" type="text/css" href="css/jquery-ui-timepicker-addon.css" />
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="js/json2.js"></script>
+<script type="text/javascript" src="js/jquery.jsonrpc.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/compliance_pending_bank_account.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript" src="js/jquery-ui-timepicker-zh-CN.js"></script>
+</head>
+<body>
+
+<div class="header"></div>
+<div class="sidenav"></div>
+
+<div class="container">
+
+<div class="page-header first-run">
+	<h1 class="title">用户待审核银行卡列表</h1> 
+</div>
+	
+	<div class="mini-layout w980 as-dates-panel no-overflow"> 
+		<ul>
+			<li>
+				<label><i class="icon-calendar"></i> 关键字</label>
+				<input style="width:100px;" class="keyword" type="text" placeholder="姓名/账户名/账号" value="" />
+			</li>
+			<li>
+				<button id="go" class="btn btn-medium btn-primary" type="submit">检索</button>
+			</li>
+			<li class="clear"></li>
+		</ul>
+	</div>
+
+
+	<div class="mini-layout w980 sample-screen">
+		<table width="100%" class="table table-condensed">
+			<thead>
+				
+				<tr class="my-sticky-element">
+					<th width="6%">序号</th>
+					<th width="8%">用户</th>
+					<th width="6%">状态</th>
+					<th width="10%">银行</th>
+					<th width="15%">账户名</th>
+					<th width="15%">账号</th>
+					<th width="5%">国家</th>
+					<th width="15%">更新时间</th>
+					<th width="20%">操作</th>
+				</tr>
+			</thead>
+			<tbody id="result_list">
+				
+			</tbody>
+		</table>
+	</div>
+	<div id="popup_container"></div>
+	<div id="popup_container_detail"></div>
+	<div class="footer"></div>
+	<div class="loading"></div><div class="notes"></div>
+</div>
+
+
+</body>
+</html>

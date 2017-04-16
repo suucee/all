@@ -1,0 +1,56 @@
+<div class="popup_dialog do_withdrawal" style="display: none;">
+	<div class="mini-layout w600 sample-screen">
+		<input type="hidden" name="id" value="0" />
+		<table width="100%" class="table table-striped table-condensed">
+			<thead>
+				<tr>
+					<th colspan="2"><h2 class="form_title">处理出金单</h2></th>
+					<th style="text-align: right; font-size: 20px; padding: 10px;"><a
+						href="javascript:void();" onclick="javascript:closePopup();"><i class="icon-minus"></i> Close</a></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td width="30%" class="field">出金单号:</td>
+					<td colspan="2" class="blue bold" style="font-size:18px;">#<span class="withdrawal_id"></span>
+						<button style="padding:2px 6px;margin-left:20px;" onclick="javascript:doDetailPopup($('.withdrawal_id').text());" class="btn btn-primary"><i class="icon-eye-open icon-white"></i> 查看</button>
+					</td>
+				</tr>
+				<tr>
+					<td class="field">当前状态:</td>
+					<td colspan="2"><span class="oldState"></span><input type="hidden" id="nowState" name="nowState"/></td>
+				</tr>
+				<tr>
+					<td class="field">金额信息:</td>
+					<td colspan="2"><span class="popamount red"></span></td>
+				</tr>
+				<tr>
+					<td class="field">操作:</td>
+					<td colspan="2">
+					<select name="newState" id="newState">
+					</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="field">操作备注:</td>
+					<td colspan="2">
+					<textarea style="width:80%;line-height:20px;height:60px;" name="auditedMemo" id="auditedMemo"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td class="field">操作密码:</td>
+					<td colspan="2"><input type="password" name="operationPassword" id="operationPassword"/></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="text-align: center; padding: 10px;"><a
+						href="javascript:void(0);"
+						onclick="javascript:doPopup();"><span
+							class="btn btn-primary"><span><i class="icon-plus icon-white"></i> 确认操作</span></span></a> &nbsp;&nbsp;&nbsp; <a
+						href="javascript:void(0);"
+						onclick="javascript:closePopup();"><span
+							class="btn btn-primary"><span><i class="icon-plus icon-white"></i> 取消操作</span></span></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

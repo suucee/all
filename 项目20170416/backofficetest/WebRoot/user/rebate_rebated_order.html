@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>已返佣订单 - BackOffice</title>
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
+<meta name="viewport" content="width=device-width">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="image/apple-touch-icon-114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="image/apple-touch-icon-144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="image/apple-touch-icon-114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="image/apple-touch-icon-144.png" />
+
+<link media="screen" rel="stylesheet" type="text/css" href="css/global.css" />
+<link media="screen" rel="stylesheet" type="text/css" href="css/fonticon.css" />
+<link media="screen" rel="stylesheet" type="text/css" href="css/deposit_list.css" />
+<link type="text/css" href="css/jquery-ui.css" rel="stylesheet" />
+<link media="screen" rel="stylesheet" type="text/css" href="css/jquery-ui-timepicker-addon.css" />
+
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/json2.js"></script>
+<script type="text/javascript" src="js/jquery.jsonrpc.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/rebate_rebated_order.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript" src="js/jquery-ui-timepicker-zh-CN.js"></script>
+</head>
+<body>
+
+<div class="header"></div>
+<div class="sidenav"></div>
+
+<div class="container">
+
+<div class="page-header" >
+    <h1>已返佣订单</h1>
+</div>
+<div class="mini-layout w980 as-dates-panel no-overflow"> 
+		<ul>
+			<li>
+				<label><i class="icon-account"></i> MT4账号：</label>
+				<select name="login">
+				<option value="0">[全部]</option>
+				</select>
+			</li>
+			<li>
+				<label for="startDate"><i class="icon-calendar"></i> 发生时间从</label>
+				<input id="startDate" name="start" type="text" placeholder="不限" value="" />
+			</li>
+			<li>
+				<label for="endDate"><i class="icon-calendar"></i> 到</label>
+				<input id="endDate" name="end" type="text" placeholder="不限" value="" />
+			</li>
+			<li class="clear"></li>
+		</ul>
+	</div>
+	
+	<div class="mini-layout w980 sample-screen">
+	    <table width="100%"  class="table table-striped orderdetails-table table-condensed">
+	        <thead>
+	            <tr>
+	                <th width="10%">交易号</th>
+	                <th width="10%">MT4账号</th>
+	                <th width="15%">时间</th>
+	                <th width="5%">类型</th>
+	                <th width="20%">交易品种/备注</th>
+	                <th width="8%">成交量</th>
+	                <th width="8%" class="amount">价位</th>
+	                <th width="8%" class="amount">佣金</th>
+	                <th width="8%" class="amount">隔夜利息</th>
+	                <th width="8%" class="amount">获利（USD）</th>
+	            </tr>
+	        </thead>
+	        <tbody id="result_list">
+	        </tbody>
+	    </table>
+	</div>
+
+
+	<div class="footer"></div>
+	<div class="loading"></div><div class="notes"></div>
+</div>
+
+
+</body>
+</html>

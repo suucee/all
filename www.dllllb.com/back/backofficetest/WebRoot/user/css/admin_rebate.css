@@ -1,0 +1,22 @@
+.rebate_tab tr td{
+	background:transparent !important;
+}
+.rebate_input{
+	width:50px !important;
+	background:transparent !important;
+	border:0 !important;
+	box-shadow: 0 0px 0px rgba(0, 0, 0, 0.000) inset !important;
+}
+.rebate_input_active{
+	width:50px !important;
+	background:white;
+	border:1px solid #d6e1e7;
+	border-radius: 4px;
+	color: #555;
+	display: inline-block;
+	transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+.rebate_tab{
+	width: 100%;
+	border: 1px solid #d6e1e7;
+}

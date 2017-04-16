@@ -1,0 +1,159 @@
+html{
+    height: auto;
+    overflow-y: visible;
+    padding-bottom: 16px;
+    min-height: 635px;
+}
+
+.clearfix:after,
+.layout:after,
+.clf:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: '.';
+    clear: both;
+    height: 0;
+}
+
+.clearfix,
+.layout,
+.clf{
+    zoom: 1;
+}
+
+li{
+    list-style: none;
+}
+.cbr2{
+    border-radius: 2px;
+}
+.clayout{
+    min-width: 800px;
+    padding-left: 2%;
+}
+h1{
+    font-size: 30px;
+    line-height: 40px;
+    margin: 18px 0;
+    border-bottom: 1px solid #333333;
+    color: #333333;
+}
+.cw770{
+    width: 96%;
+    min-width: 770px;
+}
+.cbd{
+    border: 1px solid #d2d2d2;
+}
+.cc333{
+    color: #333333;
+}
+.ccfff{
+    color: #ffffff;
+}
+.ccaaa{
+    color: #aaaaaa;
+}
+.cbg-green{
+    background-color: #72c39f;
+}
+.basic-info{
+    margin-bottom: 20px;
+}
+.ctitle{
+    padding-left: 9px;
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 34px;
+    background-color: #0d526e;
+}
+.basic-info .ccontent{
+    height: 237px;
+}
+.ccontent{
+    background-color: #ffffff;
+}
+.ccontent table{
+    width: 100%;
+    table-layout: fixed;
+}
+.basic-info td{
+    padding-left: 28px;
+    height: 39px;
+    line-height: 39px;
+    font-size: 14px;
+    color: #333333;
+}
+.basic-info input{
+    width: 40%;
+}
+.basic-info em,.basic-info input,.basic-info select{
+    margin-left: 8px;
+}
+.basic-info em{
+    font-style: normal;
+}
+.status em{
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 7px;
+    margin-right: 16px;
+}
+.basic-info i{
+    font-style: normal;
+    color: #f61818;
+    margin-left: -7px;
+}
+.basic-info select{
+    color: #333333;
+    font-size: 14px;
+}
+
+.idcard-info .ccontent{
+    padding: 0 32px 17px 32px;
+}
+.idcard-info p{
+    height: 44px;
+    line-height: 44px;
+    font-size: 14px
+}
+.idcard-info .load-btn{
+    background: #72c39f;
+}
+.idcard-info .load-btn i{
+    width: 11px;
+    height: 11px;
+    display: inline-block;
+    background: url(./images/load_arrow.png) no-repeat;
+    margin-right: 3px;
+}
+.idcard-info ul{
+    margin-left: -22px;
+}
+.idcard-info li{
+    float: left;
+    margin-left: 22px;
+    margin-top: 15px;
+}
+
+.note-info{
+    margin-top: 44px;
+    margin-left: 2%;
+    padding-left: 10px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #333333;
+}
+.sub-info{
+    margin-bottom: 3px;
+    margin-top: 9px;
+    text-align: center;
+}
+.sub-info .submit{
+    background: #72c39f;
+    padding: 0px 34px;
+    height: 31px;
+    line-height: 31px;
+}

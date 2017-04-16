@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>修改密码</title><script async src="http://c.cnzz.com/core.php"></script>
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
+		<meta name="viewport" content="width=device-width">
+
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/global.css" />
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/font-awesome.min.css" />
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/jquery.datetimepicker.css" />
+
+		<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../common/js/layer.js"></script>
+		<script type="text/javascript" src="../common/js/json2.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.jsonrpc.js"></script>
+		<script type="text/javascript" src="../common/js/global.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.datetimepicker.full.js"></script>
+
+		<script type="text/javascript" src="js/compliance_reminder.js"></script>
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="mini-layout-opacilty w980">
+				<a class="btn btn-e"  href="compliance_index.html">待处理</a>
+				<a class="btn btn-d margin-left15" href="compliance_reminder.html">提醒</a>
+				<a class="btn btn-e margin-left15" href="compliance_cddcheck.html">审核记录</a>
+			</div>
+			<div class="mini-layout w980 no-overflow">
+				<legend>
+					<i class="fa fa-file-text margin-right15" aria-hidden="true"></i>我的提醒
+				</legend>
+				<div class="layout as-dates-panel no-overflow padding-left10">
+					<ul>
+						<li>
+							<label><i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;审核结果</label>
+							<select id="scheme1" name="scheme1" placeholder="" style="width:148px">
+								<option value="my_all" selected="selected">-所有状态-</option>
+								<option value="my_accepted">已通过</option>
+								<option value="my_rejected">已驳回</option>
+							</select>
+						</li>
+						<li>
+							关键字：<input id="keyword1" name="keyword1" type="text" style="width:150px" onkeydown='if(event.keyCode==13){refreshList(1);}'
+							placeholder="用户、邮箱、手机" value="" />
+						</li>
+						<li>
+							<button id="btn1" class="btn btn-medium btn-primary" type="submit">
+								检索
+							</button>
+						</li>
+						
+						<li class="clear"></li>
+					</ul>
+				</div>
+				<div class="layout">
+					<table class="table table-condensed table-striped " width="100%;">
+                         <thead>
+							<tr>
+								<th width="5%" style="text-align: center;" >ID</th>
+								<th width="5%" style="text-align: center;" >状态</th>
+								<th width="8%" style="text-align: center;" >类型</th>
+								<th width="10%" style="text-align: center;" >用户</th>
+								<th width="17%" style="text-align: center;" >提醒时间</th>
+								<th width="20%" style="text-align: center;" >提醒备注</th>
+								<th width="10%" style="text-align: center;" >审核人员</th>
+								<th width="25%" style="text-align: center;">操作</th>
+							</tr>
+						</thead>
+						<tbody id="result_list_my"></tbody>
+					</table>
+				</div>
+			</div>
+			<div class="mini-layout w980 no-overflow">
+				<legend>
+					<i class="fa fa-file-text margin-right15" aria-hidden="true"></i>所有提醒
+				</legend>
+				<div class="layout as-dates-panel no-overflow padding-left10">
+					<ul>
+						<li>
+							<label><i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;审核结果</label>
+							<select id="scheme2" name="scheme2" placeholder="" style="width:148px">
+								<option value="all" selected="selected">-所有状态-</option>
+								<option value="accepted">已通过</option>
+								<option value="rejected">已驳回</option>
+							</select>
+						</li>
+						<li>
+							关键字：<input id="keyword2" name="keyword2" type="text" style="width:150px" onkeydown='if(event.keyCode==13){refreshList(1);}'
+							placeholder="用户、邮箱、手机" value="" />
+						</li>
+						<li>
+							<button id="btn2" class="btn btn-medium btn-primary" type="submit">
+								检索
+							</button>
+						</li>
+						
+						<li class="clear"></li>
+					</ul>
+				</div>
+				<div class="layout">
+						<table class="table table-condensed table-striped " width="100%;">
+                       <thead>
+							<tr>
+								<th width="5%" style="text-align: center;" >ID</th>
+								<th width="5%" style="text-align: center;" >状态</th>
+								<th width="8%" style="text-align: center;" >类型</th>
+								<th width="10%" style="text-align: center;" >用户</th>
+								<th width="17%" style="text-align: center;" >提醒时间</th>
+								<th width="20%" style="text-align: center;" >提醒备注</th>
+								<th width="10%" style="text-align: center;" >审核人员</th>
+								<th width="25%" style="text-align: center;">操作</th>
+							</tr>
+						</thead>
+						<tbody id="result_list_all"></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

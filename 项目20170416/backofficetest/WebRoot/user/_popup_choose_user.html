@@ -1,0 +1,74 @@
+<div class="popup_dialog popup_choose_dialog" style="display: none;">
+	<div class="mini-layout w600 sample-screen">
+		<input type="hidden" name="id" value="0" />
+		<table width="100%" class="table table-striped table-condensed">
+			<thead>
+				<tr>
+					<th ><h2 class="form_title">请选择用户</h2></th>
+					<th style="text-align: right; font-size: 20px; padding: 10px;"><a
+						href="javascript:void();" onclick="javascript:closePopupChooseUser();"><i class="icon-minus"></i> Close</a></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="field" width="30%">选择用户:</td>
+					<td><select name="userId" style="width:95%;"></select></td>
+				</tr>
+				<tr>
+					<td class="field" colspan="2">以后加各种搜索，先下拉了</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: center; padding: 10px;"><a
+						href="javascript:void(0);"
+						onclick="javascript:doPopupChooseUser();"><span
+							class="btn btn-primary"><span><i class="icon-plus icon-white"></i> 确认操作</span></span></a> &nbsp;&nbsp;&nbsp; <a
+						href="javascript:void(0);"
+						onclick="javascript:closePopupChooseUser();"><span
+							class="btn btn-primary"><span><i class="icon-plus icon-white"></i> 取消操作</span></span></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<script type="text/javascript">
+function openPopupChooseUser(userId){
+	$(".popup_choose_dialog").fadeIn(200);
+	
+	$.jsonRPC.request('adminUserService.getList', {
+		params : [],
+		success : function(result) {
+			if (result) {
+				var html = '';
+				html += '<option value="0"> - 请选择 - </option>';
+				for (var i in result.list) {
+					var item = result.list[i].map;
+					/*滤掉自己和自己的客户
+					if (item.path.indexOf(result.path) == 0) {
+						continue;
+					}*/
+					{
+						var spaces = '';
+						for (var k=0;k<item.level - 1;k++) {
+							spaces += '　';
+						}
+						html += '<option value="'+item.id+'">'+spaces+'ID:'+item.id+' - '+item.name+' - ' +item.mobile+ ' - ' + item.email +'</option>';
+					}
+				}
+				
+				$(".popup_choose_dialog [name='userId']").html(html);
+				$(".popup_choose_dialog [name='userId']").val(userId);
+			}
+		}
+	});
+}
+
+function doPopupChooseUser(){
+	var userId = parseInt($(".popup_choose_dialog [name='userId']").val());
+	
+	callbackPopupChooseUser(userId);
+}
+
+function closePopupChooseUser() {
+	$(".popup_choose_dialog").fadeOut(200);
+}
+</script>

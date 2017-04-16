@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>MT4组 - BackOffice</title>
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
+		<meta name="viewport" content="width=device-width">
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="image/apple-touch-icon-114.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="image/apple-touch-icon-144.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="image/apple-touch-icon-114.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="image/apple-touch-icon-144.png" />
+
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/global.css" />
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/font-awesome.css" />
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/jquery.datetimepicker.css" />
+		<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../common/js/layer.js"></script>
+		<script type="text/javascript" src="../common/js/json2.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.jsonrpc.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.datetimepicker.full.js"></script>
+		<script type="text/javascript" src="../common/js/global.js"></script>
+		<script type="text/javascript" src="js/mt4s_group.js"></script>
+	</head>
+	<body>
+
+		<div class="container">
+
+			<div class="mini-layout-opacilty w980">
+				<a class="btn btn-e"  href="mt4s_index.html">MT4管理</a>
+				<a class="btn btn-e margin-left15" href="mt4s_order.html">MT4交易</a>
+				<a class="btn btn-d margin-left15" href="mt4s_group.html">MT4组信息</a>
+			</div>
+
+			<div class="mini-layout w980">
+				<legend> <i class="fa fa-navicon margin-right15" aria-hidden="true"></i>MT4组</legend>
+				<div class="layout">
+					<table width="100%"  class="table table-striped orderdetails-table table-condensed">
+						<thead>
+							<tr>
+								<th width="30%">组</th>
+								<th width="70%">公司名称</th>
+							</tr>
+						</thead>
+						<tbody id="result_list"></tbody>
+					</table>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+</html>

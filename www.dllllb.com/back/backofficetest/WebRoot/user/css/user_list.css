@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+#startDate {width:100px;}
+#endDate {width:100px;}
+
+.as-dates-panel li {margin-right:30px;}
+.as-dates-panel ul {padding:10px 5px 10px 5px;}
+.as-dates-panel label {margin-right:5px;}
+.as-dates-panel input {margin-bottom:0;}
+.as-dates-panel select {margin-bottom:0;}
+#result_list td{
+	height: 10px !important;
+}

@@ -1,0 +1,52 @@
+<ul class="nav nav-list">
+	<li class="customer"><span>
+		<i class="icon-user"></i>
+		</span>
+		<span class="role"></span><br /><span class="customer_id"></span>
+		</li>
+	<li class="divider cc-number-divider"></li>
+	
+	<li class="sidebar-heading"><h3><i class="icon-group"></i> MT4账号管理 </h3></li>
+	<li><a href="mt4.html?scheme=all">所有(<span id="count_all"></span>)</a></li>
+	<li><a href="mt4.html?scheme=binded">已绑定(<span id="count_binded"></span>)</a></li>
+	<li><a href="mt4.html?scheme=unbinded">未绑定(<span id="count_unbinded"></span>)</a></li>
+	<li><a href="mt4.html?scheme=frozen">冻结的(<span id="count_frozen"></span>)</a></li>
+	<li><a href="mt4.html?scheme=disabled">禁用的(<span id="count_disabled"></span>)</a></li>
+	<li><a href="mt4.html?scheme=deleted">删除的(<span id="count_deleted"></span>)</a></li>
+	<li class="divider"></li>
+	
+	<li class="sidebar-heading"><h3><i class="icon-group"></i> MT4交易 </h3></li>
+	<li><a href="mt4_order.html">MT4历史交易</a></li>
+	<!-- 
+	<li><a href="mt4_type.html">MT4交易类型</a></li>
+	<li><a href="mt4_p.html">MT4交易品种</a></li>-->
+	<li><a href="mt4_group.html">MT4组</a></li>
+	<!-- <li><a href="mt4_online.html">MT4当前在线</a></li>-->
+	<li class="divider"></li>
+	
+</ul>
+
+<div style="height:80px;"></div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".sidenav a[href='"+filename+"']").parent().addClass("active");
+});
+
+$(document).ready(function(){
+	getCounts();
+});
+function getCounts() {
+	$.jsonRPC.request("adminMT4Service.getCounts", {
+		params : [],
+		success : function(result) { 
+			if (result) {
+				for (var i in result.list) {
+					var item = result.list[i];
+					$("#count_"+item.scheme).text(item.count);
+				}
+			}
+		}
+	});
+}
+</script>

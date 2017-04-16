@@ -1,0 +1,49 @@
+<ul class="nav nav-list">
+	<li class="customer"><span>
+		<i class="icon-user"></i>
+		</span>
+		<span class="role"></span><br /><span class="customer_id"></span>
+		</li>
+	<li class="divider cc-number-divider"></li>
+	
+	<li class="sidebar-heading"><h3><i class="icon-lock"></i> 返佣方案</h3></li>
+	<li><a href="rebate.html">返佣分类</a></li>
+	<li class="divider"></li>
+	
+	
+	<li class="sidebar-heading"><h3><i class="icon-book"></i> 返佣管理</h3></li>
+	<li><a href="rebate_waiting_order.html">待返佣订单</a></li>
+	<li><a href="rebate_rebated_order.html">返佣明细</a></li>
+	<li><a href="rebate_report_user.html">返佣收入报表（用户）</a></li>
+	<li><a href="rebate_report_source.html">返佣来源报表（用户）</a></li>
+	<li><a href="rebate_report_login.html">返佣来源报表（MT4账号）</a></li>
+	
+	<li class="sidebar-heading"><h3><i class="icon-book"></i> 返佣发放</h3></li>
+	<li><a href="rebate_user_balance.html">返佣发放</a></li>
+	
+	<li class="divider"></li>
+	
+</ul>
+
+<div style="height:80px;"></div>
+
+<script type="text/javascript">
+function getCounts() {
+	$.jsonRPC.request('adminAdminService.getCounts', {
+		params : [],
+		success : function(result) {
+			if (result) {
+				for (var i in result.list) {
+					var item = result.list[i];
+					$("#count_"+item.scheme).html(item.count);
+				}
+			}
+		}
+	});
+}
+
+$(document).ready(function(){
+	$(".sidenav a[href='"+filename+"']").parent().addClass("active");
+	getCounts();
+});
+</script>

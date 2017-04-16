@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+
+#security_confirm {display:none;position:fixed;left:0;right:0;top:0;bottom:0;z-index:100;background:rgba(0, 0, 0, 0.6);}
+
+
+#account_form_container {display:none;min-height:700px;position:absolute;left:0;right:0;top:0;bottom:0;z-index:100;background:rgba(255, 255, 255, 0.6);}
+.field {text-align:right !important;line-height:30px !important;}
+.w600 {width:600px;margin-top:100px;}

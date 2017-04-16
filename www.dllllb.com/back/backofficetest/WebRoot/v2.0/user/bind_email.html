@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>绑定邮箱 - BackOffice</title>
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
+<meta name="viewport" content="width=device-width">
+
+<link media="screen" rel="stylesheet" type="text/css" href="../common/css/global.css" />
+<link media="screen" rel="stylesheet" type="text/css" href="../common/css/font-awesome.css" />
+<link media="screen" rel="stylesheet" type="text/css" href="../common/css/completer.css" />
+<link rel="stylesheet" type="text/css" href="css/bind_email.css"/>
+<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../common/js/json2.js"></script>
+<script type="text/javascript" src="../common/js/layer.js"></script>
+<script type="text/javascript" src="../common/js/completer.min.js"></script>
+<script type="text/javascript" src="../common/js/jquery.jsonrpc.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="js/bind_email.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+	<div class="mini-layout-opacilty w980">
+				<button class="btn btn-f float-left" onclick="parent.closeWindow()"><i class="fa fa-chevron-left margin-right10"></i>返回</button>
+				<button class="btn btn-f float-right" onclick="parent.closeWindow()"><i class="fa fa-remove margin-right10"></i>关闭</button>
+				<div class="clear"></div>
+			</div>
+	<div class="mini-layout w980 sample-screen">
+		<legend>绑定邮箱</legend>
+		
+		<div class="processor margin-top30">
+			<div class="processor_1 float-left">
+				<span>第一步：发送验证码</span>
+			</div>
+			<div class="processor_2 float-left">
+				<span>第二步：校验验证码</span>
+			</div>
+			<div class="processor_3 float-left">
+				<span>第三步：完成验证</span>
+			</div>
+		</div>
+		
+		<div class="operation_1" >
+			<div class="email_address_span">
+				<span style="font-size: 16px">
+					请在下方输入您的邮箱地址
+				</span>
+			</div>
+			<div class="email_input margin-top30">
+				<label style="font-size: 14px;">邮箱地址：</label>
+				<input class="auto-complete-email" type="text" name="email" id="email" /><br />
+				<label style="font-size: 12px;color: gray;">推荐使用如网易，新浪，QQ等主流邮箱</label>
+			</div>
+			<div class="submit_div">
+				<button class="btn btn-a btn_send_code"><span class="margin-left20 margin-right20">发送验证码</span></button>
+			</div>
+			<div class="tip margin-top30">
+				<span>温馨提示：</span><br />
+				<span class="margin-left30">1、绑定邮箱之后您的电子邮箱可作为您登录的账号。<br /></span>
+				<span class="margin-left30">2、您的电子邮箱是您账户安全的有效保证，请确保电子邮箱正确，以及邮件的正常接收。<br /></span>
+				<span class="margin-left30">3、为保证安全，120秒内只能发送1次邮箱验证码，验证码5分钟有效。。<br /></span>
+			</div>
+		</div>
+		
+		
+		
+		<div class="operation_2" style="display: none;">
+			<div class="email_code">
+				<span style="font-size: 16px">
+					<i class="fa fa-check-square-o font-green" aria-hidden="true"></i>
+					验证码已经发送至您的邮箱：<span id="email_2"></span>
+				</span>
+			</div>
+			<div class="code_input margin-top30 align-center" >
+				<label style="font-size: 14px;"> 验证码：</label>
+				<input type="text" name="code" id="code" value="" maxlength="8" style=" width: 80px;"/>
+				<label style="font-size: 12px;"> 没有收到验证码？</label> 
+				<label class="times_tip" style="font-size: 12px;"> 
+					<span id="times">120</span> 秒后可以重新发送
+				</label> 
+				<a class="resend" style="text-decoration: underline;" href="javascript:reSend();">重新发送邮件</a> 
+			</div>
+			<div class="submit_div">
+				<a class="btn btn-a btn_check"><span class="margin-left20 margin-right20">下一步</span></a>
+			</div>
+			<div class="tip margin-top30">
+				<span>温馨提示：</span><br />
+				<span class="margin-left30">1、网站会将您的重要操作通知至您的邮箱，请您确保是您本人操作，保证账户安全。<br /></span>
+				<span class="margin-left30">2、如果您迟迟未收到验证码邮件，<span class="font-red">请确保没有被邮件系统拦截。</span><br /></span>
+				<span class="margin-left30">3、为保证安全，120秒内只能发送1次邮箱验证码，验证码5分钟有效。<br /></span>
+			</div>
+			
+		</div>
+		
+		<div class="operation_3" style="display: none;"  >
+			<div class="email_code">
+				<span style="font-size: 16px">
+					<i class="fa fa-check-square-o font-green" aria-hidden="true"></i>
+					恭喜您，您已完成邮箱：<span id="email_3"></span>的绑定
+				</span>
+			</div>
+			
+			<div class="email_code margin-top30">
+				<span style="font-size: 16px">
+					<a href="profile_index.html" class="btn btn-a">前往查看我的资料</a>
+				</span>
+			</div>
+			
+			<div class="tip margin-top30">
+				<span>温馨提示：</span><br />
+				<span class="margin-left30">1、绑定邮箱之后您的电子邮箱可作为您登录的账号。<br /></span>
+				<span class="margin-left30">2、您的电子邮箱是您账户安全的有效保证，请确保电子邮箱正确。<br /></span>
+				<span class="margin-left30">3、网站会将您的重要操作通知至您的邮箱，请您确保是您本人操作，保证账户安全。<br /></span>
+				<span class="margin-left30">4、在您找回密码和忘记密码时需使用该邮箱。<br /></span>
+				<span class="margin-left30">5、如果您迟迟未收到验证码邮件，<span class="font-red">请确保没有被邮件系统拦截。</span><br /></span>
+		</div>
+		</div>
+		
+   </div>
+
+</div>
+
+
+</body>
+</html>

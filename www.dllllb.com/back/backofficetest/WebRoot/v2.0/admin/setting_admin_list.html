@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>运维团队管理 - 管理中心</title>
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
+		<meta name="viewport" content="width=device-width">
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="image/apple-touch-icon-114.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="image/apple-touch-icon-144.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="image/apple-touch-icon-114.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="image/apple-touch-icon-144.png" />
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/global.css" />
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/font-awesome.css" />
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/jquery.datetimepicker.css" />
+		<link media="screen" rel="stylesheet" type="text/css" href="../common/css/jquery.treetable.css" />
+		<script type="text/javascript" src="../common/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.treetable.js"></script>
+		<script type="text/javascript" src="../common/js/json2.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.jsonrpc.js"></script>
+		<script type="text/javascript" src="../common/js/layer.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.datetimepicker.full.js"></script>
+		<script type="text/javascript" src="../common/js/ajaxfileupload.js"></script>
+		<script type="text/javascript" src="../common/js/global.js"></script>
+		<script type="text/javascript" src="js/setting_admin_list.js"></script>
+	</head>
+	<body>
+
+		<div class="container">
+			<div class="mini-layout-opacilty w980">
+				<a class="btn btn-e"  href="setting_index.html">常规设置</a>
+				<a class="btn btn-e margin-left15" href="announcement_index.html">公司公告</a>
+				<a class="btn btn-e margin-left15" href="setting_staff_list.html">员工管理</a>
+				<a class="btn btn-d margin-left15" href="setting_admin_list.html">运维团队管理</a>
+			</div>
+			<div class="mini-layout w980">
+				<legend>
+					<i class="fa fa-users margin-right15" aria-hidden="true"></i>运维团队管理
+				</legend>
+				<div class="layout padding10">
+					<a class="btn btn-f link " href="setting_admin_add.html">添加成员</a>
+					<a class="btn btn-f link margin-left15" href="setting_admin_list.html?scheme=all">所有</a>
+					<a class="btn btn-f link margin-left15" href="setting_admin_list.html?scheme=operations_manager">运维经理</a>
+					<a class="btn btn-f link margin-left15" href="setting_admin_list.html?scheme=compliance_officer">合规</a>
+					<a class="btn btn-f link margin-left15" href="setting_admin_list.html?scheme=financial_staff">财务</a>
+					<a class="btn btn-f link margin-left15" href="setting_admin_list.html?scheme=financial_superior">财务主管</a>
+					<a class="btn btn-f link margin-left15" href="setting_admin_list.html?scheme=risk_management_commissioner">风控</a>
+					<a class="btn btn-f link margin-left15" href="setting_admin_list.html?scheme=webmaster">网站管理员</a>
+					<a class="btn btn-f link margin-left15" href="setting_admin_list.html?scheme=customer_service_staff">客服</a>
+					<a class="btn btn-f link margin-left15" href="setting_admin_list.html?scheme=disabled">已禁用</a>
+				</div>
+				<div class="layout">
+					<table width="100%" class="table  table-condensed">
+						<thead>
+							<tr class="my-sticky-element">
+								<th width="6%" style="text-align:center;">ID</th>
+								<th width="6%">状态</th>
+								<th width="10%">角色</th>
+								<th width="10%">显示名称</th>
+								<th width="20%">账号</th>
+								<th width="15%">创建时间</th>
+								<th width="15%">上次登录</th>
+								<th width="20%" style="text-align:center;">操作</th>
+							</tr>
+						</thead>
+						<tbody id="result_list">
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div id="popup_container"></div>
+			<div id="popup_container_add"></div>
+
+			<div class="footer"></div>
+			<div class="loading"></div><div class="notes"></div>
+		</div>
+
+	</body>
+</html>
